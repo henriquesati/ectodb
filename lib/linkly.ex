@@ -1,6 +1,12 @@
-defmodule Linkly do
-  changeset = User.changeset(%User{}, %{age: 42, email: "mary@example.com"})
-{:error, changeset} = Linkly.Repo.insert(changeset)
-changeset.action
-#=> :insert
-end
+import Ecto.Query
+alias Ecto.Adapters.SQL
+alias Linkly.Repo
+alias Linkly.Schema.Users
+
+
+user1 = %Users{
+  username: "sasa",
+  email: "abadieng@kalim.com",
+  about: "hahaa"
+}
+IO.inspect(user1)
